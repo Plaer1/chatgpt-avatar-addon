@@ -17,5 +17,11 @@
       ],
       "run_at": "document_idle"
     }
-  ]
+  ],
+  "icons": {
+    "16": "ico/icon16.png",
+    "32": "ico/icon32.png",
+    "48": "ico/icon48.png",
+    "128": "ico/icon128.png"
+  }
 }
