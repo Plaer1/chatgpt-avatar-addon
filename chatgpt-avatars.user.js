@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         ChatGPT Avatars (cheap polling build)
 // @namespace    http://tampermonkey.net/
-// @version      1.9
-// @description  Lightweight inline avatars for ChatGPT using slow polling, local storage, and a tiny built-in cropper
+// @version      2.0
+// @description  Lightweight inline avatars for ChatGPT using slow polling, local storage, and a tiny built-in wheel-zoom cropper
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
 // @grant        none
@@ -174,13 +174,10 @@
     pointer-events: none;
 }
 
-#${CROPPER_ID} .cgpt-cropper-label {
+#${CROPPER_ID} .cgpt-cropper-hint {
     font-size: 12px;
     opacity: .86;
-}
-
-#${CROPPER_ID} .cgpt-cropper-range {
-    width: 100%;
+    margin-top: -2px;
 }
 
 #${CROPPER_ID} .cgpt-cropper-buttons {
@@ -309,8 +306,7 @@
         <div class="cgpt-cropper-dim"></div>
         <div class="cgpt-cropper-circle"></div>
     </div>
-    <label class="cgpt-cropper-label" for="cgpt-cropper-zoom">Zoom</label>
-    <input class="cgpt-cropper-range" id="cgpt-cropper-zoom" type="range" min="1" max="3" step="0.01" value="1" />
+    <p class="cgpt-cropper-hint">Scroll / trackpad to zoom. Drag to reposition.</p>
     <div class="cgpt-cropper-buttons">
         <button class="cgpt-cropper-btn" data-action="cancel" type="button">Cancel</button>
         <button class="cgpt-cropper-btn cgpt-cropper-btn-primary" data-action="save" type="button">Save</button>
@@ -321,9 +317,9 @@
             const panel = modal.querySelector('.cgpt-cropper-panel');
             const viewport = modal.querySelector('.cgpt-cropper-viewport');
             const preview = modal.querySelector('.cgpt-cropper-image');
-            const zoomRange = modal.querySelector('#cgpt-cropper-zoom');
 
-            if (!(panel instanceof HTMLElement) || !(viewport instanceof HTMLElement) || !(preview instanceof HTMLImageElement) || !(zoomRange instanceof HTMLInputElement)) {
+
+            if (!(panel instanceof HTMLElement) || !(viewport instanceof HTMLElement) || !(preview instanceof HTMLImageElement)) {
                 modal.remove();
                 reject(new Error('Cropper failed to initialize'));
                 return;
@@ -336,11 +332,7 @@
             const naturalWidth = image.naturalWidth;
             const naturalHeight = image.naturalHeight;
             const minScale = Math.max(guideSize / naturalWidth, guideSize / naturalHeight);
-            const maxScale = Math.max(minScale * 5, minScale + 0.5);
-
-            zoomRange.min = String(minScale);
-            zoomRange.max = String(maxScale);
-            zoomRange.value = String(minScale);
+            const maxScale = Math.max(minScale * 6, minScale + 0.8);
 
             let scale = minScale;
             let tx = 0;
@@ -362,8 +354,10 @@
 
             function redraw() {
                 clampPosition();
-                preview.style.width = `${naturalWidth}px`;
-                preview.style.height = `${naturalHeight}px`;
+                preview.style.width = 'auto';
+                preview.style.height = 'auto';
+                preview.style.maxWidth = 'none';
+                preview.style.maxHeight = 'none';
                 preview.style.left = '50%';
                 preview.style.top = '50%';
                 preview.style.transform = `translate(-50%, -50%) translate(${tx}px, ${ty}px) scale(${scale})`;
@@ -391,35 +385,42 @@
                     closeWithError(new Error('Crop canceled'));
                 }
                 if (action === 'save') {
+                    const srcSize = guideSize / scale;
+                    const srcX = Math.max(0, Math.min(naturalWidth - srcSize, (naturalWidth / 2) - (srcSize / 2) - (tx / scale)));
+                    const srcY = Math.max(0, Math.min(naturalHeight - srcSize, (naturalHeight / 2) - (srcSize / 2) - (ty / scale)));
+
+                    const outputSize = Math.max(256, Math.min(1024, Math.round(srcSize)));
                     const output = document.createElement('canvas');
-                    output.width = 256;
-                    output.height = 256;
+                    output.width = outputSize;
+                    output.height = outputSize;
                     const ctx = output.getContext('2d');
                     if (!ctx) {
                         closeWithError(new Error('Canvas context unavailable'));
                         return;
                     }
 
-                    const srcSize = guideSize / scale;
-                    const srcX = (naturalWidth / 2) - (srcSize / 2) - (tx / scale);
-                    const srcY = (naturalHeight / 2) - (srcSize / 2) - (ty / scale);
-
+                    const radius = outputSize / 2;
                     ctx.save();
                     ctx.beginPath();
-                    ctx.arc(128, 128, 128, 0, Math.PI * 2);
+                    ctx.arc(radius, radius, radius, 0, Math.PI * 2);
                     ctx.closePath();
                     ctx.clip();
-                    ctx.drawImage(image, srcX, srcY, srcSize, srcSize, 0, 0, 256, 256);
+                    ctx.drawImage(image, srcX, srcY, srcSize, srcSize, 0, 0, outputSize, outputSize);
                     ctx.restore();
 
                     closeWithResult(output.toDataURL('image/png'));
                 }
             });
 
-            zoomRange.addEventListener('input', () => {
-                scale = Number(zoomRange.value);
+            viewport.addEventListener('wheel', (event) => {
+                event.preventDefault();
+                const delta = event.deltaY > 0 ? -1 : 1;
+                const factor = delta > 0 ? 1.08 : 0.92;
+                const nextScale = Math.max(minScale, Math.min(maxScale, scale * factor));
+                if (nextScale === scale) return;
+                scale = nextScale;
                 redraw();
-            });
+            }, { passive: false });
 
             viewport.addEventListener('pointerdown', (event) => {
                 dragging = true;
