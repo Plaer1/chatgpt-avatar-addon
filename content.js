@@ -21,7 +21,8 @@
     assistant: null
   };
 
-  let processedCount = 0;
+  let scanQueued = false;
+  let observer = null;
 
   function ensureFileInput() {
     let input = document.getElementById(FILE_INPUT_ID);
@@ -304,22 +305,51 @@
 
   function scanMessages() {
     const messages = document.querySelectorAll(ROLE_SELECTOR);
+    messages.forEach((messageEl) => {
+      attachAvatar(messageEl);
+    });
+  }
 
-    if (messages.length < processedCount) {
-      processedCount = 0;
+  function queueScan() {
+    if (scanQueued) return;
+    scanQueued = true;
+    window.requestAnimationFrame(() => {
+      scanQueued = false;
+      scanMessages();
+    });
+  }
+
+  function startObserver() {
+    if (observer || !document.body) return;
+
+    observer = new MutationObserver((mutations) => {
+      for (const mutation of mutations) {
+        for (const node of mutation.addedNodes) {
+          if (!(node instanceof HTMLElement)) continue;
+          if (node.matches(ROLE_SELECTOR) || node.querySelector(ROLE_SELECTOR)) {
+            queueScan();
+            return;
+          }
+        }
+      }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
+
+  function runWhenIdle(task) {
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(task, { timeout: 1500 });
+      return;
     }
-
-    for (let i = processedCount; i < messages.length; i += 1) {
-      attachAvatar(messages[i]);
-    }
-
-    processedCount = messages.length;
+    window.setTimeout(task, 400);
   }
 
   function boot() {
-    ensureFileInput();
-    scanMessages();
-    setInterval(scanMessages, 4444);
+    runWhenIdle(() => {
+      scanMessages();
+      startObserver();
+    });
   }
 
   if (document.readyState === 'loading') {
