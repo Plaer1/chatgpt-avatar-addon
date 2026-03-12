@@ -7,7 +7,6 @@ This repository is now structured as a Chrome extension (Manifest V3).
 - `manifest.json` – extension manifest and content script registration.
 - `content.js` – avatar injection + image cropper logic.
 - `content.css` – avatar and cropper styling.
-- `SOURCES.md` – third-party attribution and implementation provenance.
 
 ## Load in Chrome (Developer Mode)
 
