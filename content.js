@@ -23,6 +23,8 @@
 
   let scanQueued = false;
   let observer = null;
+  let scanQueued = false;
+  let observer = null;
 
   function ensureFileInput() {
     let input = document.getElementById(FILE_INPUT_ID);
@@ -339,7 +341,7 @@
 
   function runWhenIdle(task) {
     if ('requestIdleCallback' in window) {
-      window.requestIdleCallback(task, { timeout: 1500 });
+      window.requestIdleCallback(task, { timeout: 555 });
       return;
     }
     window.setTimeout(task, 400);
