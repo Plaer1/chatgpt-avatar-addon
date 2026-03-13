@@ -1,0 +1,35 @@
+{
+  "extensionDescription": {
+    "message": "Lightweight inline avatars for ChatGPT with local avatar cropping."
+  },
+  "changeUserAvatar": {
+    "message": "Change user avatar"
+  },
+  "changeAssistantAvatar": {
+    "message": "Change assistant avatar"
+  },
+  "userAvatarAlt": {
+    "message": "User avatar"
+  },
+  "assistantAvatarAlt": {
+    "message": "Assistant avatar"
+  },
+  "cropperDialogLabel": {
+    "message": "Crop avatar image"
+  },
+  "cropperTitle": {
+    "message": "Adjust your avatar"
+  },
+  "cropperPreviewAlt": {
+    "message": "Avatar crop preview"
+  },
+  "cropperHint": {
+    "message": "Scroll to zoom. Drag to reposition."
+  },
+  "cropperCancel": {
+    "message": "Cancel"
+  },
+  "cropperSave": {
+    "message": "Save"
+  }
+}

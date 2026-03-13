@@ -1,0 +1,170 @@
+.cgpt-inline-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid rgba(127, 127, 127, 0.25);
+  background: rgba(127, 127, 127, 0.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  flex: 0 0 auto;
+  padding: 0;
+  margin: 0;
+}
+
+.cgpt-inline-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cgpt-avatar-emoji {
+  font-size: 30px;
+  line-height: 1;
+}
+
+[data-message-author-role="assistant"] {
+  position: relative;
+}
+
+[data-message-author-role="assistant"] > .cgpt-inline-avatar {
+  position: absolute;
+  left: -52px;
+  top: 0.2em;
+}
+
+[data-message-author-role="user"] .flex.w-\[var\(--user-chat-width\,70\%\)\].flex-col.items-end {
+  position: relative;
+}
+
+[data-message-author-role="user"] .flex.w-\[var\(--user-chat-width\,70\%\)\].flex-col.items-end > .cgpt-inline-avatar {
+  position: absolute;
+  left: -64px;
+  top: 0.2em;
+}
+
+.user-message-bubble-color {
+  position: relative;
+}
+
+.user-message-bubble-color > .cgpt-inline-avatar[data-role="user"] {
+  position: absolute;
+  left: -56px;
+  top: 0.2em;
+}
+
+#cgpt-avatar-cropper-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.72);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+#cgpt-avatar-cropper-modal .cgpt-cropper-panel {
+  width: min(92vw, 390px);
+  max-height: 92vh;
+  background: #141414;
+  color: #fafafa;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#cgpt-avatar-cropper-modal .cgpt-cropper-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+}
+
+#cgpt-avatar-cropper-modal .cgpt-cropper-viewport {
+  width: min(78vw, 300px);
+  height: min(78vw, 300px);
+  align-self: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #222;
+  touch-action: none;
+  user-select: none;
+}
+
+#cgpt-avatar-cropper-modal .cgpt-cropper-image {
+  position: absolute;
+  transform-origin: center center;
+  will-change: transform;
+  pointer-events: none;
+}
+
+#cgpt-avatar-cropper-modal .cgpt-cropper-dim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at center, transparent 0 49%, rgba(0, 0, 0, 0.52) 51%);
+}
+
+#cgpt-avatar-cropper-modal .cgpt-cropper-circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 78%;
+  height: 78%;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+}
+
+#cgpt-avatar-cropper-modal .cgpt-cropper-hint {
+  font-size: 12px;
+  opacity: 0.86;
+  margin-top: -2px;
+}
+
+#cgpt-avatar-cropper-modal .cgpt-cropper-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+#cgpt-avatar-cropper-modal .cgpt-cropper-btn {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-radius: 8px;
+  padding: 7px 12px;
+  cursor: pointer;
+}
+
+#cgpt-avatar-cropper-modal .cgpt-cropper-btn-primary {
+  background: #fff;
+  border-color: #fff;
+  color: #111;
+  font-weight: 600;
+}
+
+@media (max-width: 700px) {
+  .cgpt-inline-avatar {
+    width: 34px;
+    height: 34px;
+  }
+
+  .cgpt-avatar-emoji {
+    font-size: 24px;
+  }
+
+  [data-message-author-role="assistant"] > .cgpt-inline-avatar {
+    left: -44px;
+  }
+}

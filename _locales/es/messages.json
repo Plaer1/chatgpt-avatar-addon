@@ -1,0 +1,35 @@
+{
+  "extensionDescription": {
+    "message": "Avatares en línea ligeros para ChatGPT con recorte local de imágenes."
+  },
+  "changeUserAvatar": {
+    "message": "Cambiar avatar del usuario"
+  },
+  "changeAssistantAvatar": {
+    "message": "Cambiar avatar del asistente"
+  },
+  "userAvatarAlt": {
+    "message": "Avatar del usuario"
+  },
+  "assistantAvatarAlt": {
+    "message": "Avatar del asistente"
+  },
+  "cropperDialogLabel": {
+    "message": "Recortar imagen de avatar"
+  },
+  "cropperTitle": {
+    "message": "Ajusta tu avatar"
+  },
+  "cropperPreviewAlt": {
+    "message": "Vista previa del recorte del avatar"
+  },
+  "cropperHint": {
+    "message": "Desplázate para hacer zoom. Arrastra para reposicionar."
+  },
+  "cropperCancel": {
+    "message": "Cancelar"
+  },
+  "cropperSave": {
+    "message": "Guardar"
+  }
+}
