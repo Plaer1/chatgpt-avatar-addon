@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "ChatGPT Avatars",
+  "name": "__MSG_extensionName__",
   "version": "2.2.1",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",

@@ -1,0 +1,38 @@
+{
+  "extensionName": {
+    "message": "ChatGPTアバター"
+  },
+  "extensionDescription": {
+    "message": "ChatGPT用の軽量なインラインアバター。画像のローカル切り抜きに対応。"
+  },
+  "changeUserAvatar": {
+    "message": "ユーザーのアバターを変更"
+  },
+  "changeAssistantAvatar": {
+    "message": "アシスタントのアバターを変更"
+  },
+  "userAvatarAlt": {
+    "message": "ユーザーのアバター"
+  },
+  "assistantAvatarAlt": {
+    "message": "アシスタントのアバター"
+  },
+  "cropperDialogLabel": {
+    "message": "アバター画像を切り抜く"
+  },
+  "cropperTitle": {
+    "message": "アバターを調整"
+  },
+  "cropperPreviewAlt": {
+    "message": "アバター切り抜きのプレビュー"
+  },
+  "cropperHint": {
+    "message": "スクロールで拡大縮小。ドラッグで位置を調整。"
+  },
+  "cropperCancel": {
+    "message": "キャンセル"
+  },
+  "cropperSave": {
+    "message": "保存"
+  }
+}

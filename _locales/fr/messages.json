@@ -1,0 +1,38 @@
+{
+  "extensionName": {
+    "message": "Avatars ChatGPT"
+  },
+  "extensionDescription": {
+    "message": "Des avatars intégrés et légers pour ChatGPT avec recadrage local des images."
+  },
+  "changeUserAvatar": {
+    "message": "Changer l’avatar de l’utilisateur"
+  },
+  "changeAssistantAvatar": {
+    "message": "Changer l’avatar de l’assistant"
+  },
+  "userAvatarAlt": {
+    "message": "Avatar de l’utilisateur"
+  },
+  "assistantAvatarAlt": {
+    "message": "Avatar de l’assistant"
+  },
+  "cropperDialogLabel": {
+    "message": "Recadrer l’image de l’avatar"
+  },
+  "cropperTitle": {
+    "message": "Ajustez votre avatar"
+  },
+  "cropperPreviewAlt": {
+    "message": "Aperçu du recadrage de l’avatar"
+  },
+  "cropperHint": {
+    "message": "Faites défiler pour zoomer. Glissez pour repositionner."
+  },
+  "cropperCancel": {
+    "message": "Annuler"
+  },
+  "cropperSave": {
+    "message": "Enregistrer"
+  }
+}

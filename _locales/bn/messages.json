@@ -1,0 +1,38 @@
+{
+  "extensionName": {
+    "message": "ChatGPT অ্যাভাটার"
+  },
+  "extensionDescription": {
+    "message": "ChatGPT-এর জন্য হালকা ইনলাইন অ্যাভাটার, লোকাল ইমেজ ক্রপিংসহ।"
+  },
+  "changeUserAvatar": {
+    "message": "ব্যবহারকারীর অ্যাভাটার বদলান"
+  },
+  "changeAssistantAvatar": {
+    "message": "সহকারীর অ্যাভাটার বদলান"
+  },
+  "userAvatarAlt": {
+    "message": "ব্যবহারকারীর অ্যাভাটার"
+  },
+  "assistantAvatarAlt": {
+    "message": "সহকারীর অ্যাভাটার"
+  },
+  "cropperDialogLabel": {
+    "message": "অ্যাভাটার ছবি ক্রপ করুন"
+  },
+  "cropperTitle": {
+    "message": "আপনার অ্যাভাটার ঠিক করুন"
+  },
+  "cropperPreviewAlt": {
+    "message": "অ্যাভাটার ক্রপের প্রিভিউ"
+  },
+  "cropperHint": {
+    "message": "জুম করতে স্ক্রল করুন। অবস্থান বদলাতে টানুন।"
+  },
+  "cropperCancel": {
+    "message": "বাতিল"
+  },
+  "cropperSave": {
+    "message": "সংরক্ষণ"
+  }
+}

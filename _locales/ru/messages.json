@@ -1,0 +1,38 @@
+{
+  "extensionName": {
+    "message": "Аватары ChatGPT"
+  },
+  "extensionDescription": {
+    "message": "Легкие встроенные аватары для ChatGPT с локальной обрезкой изображений."
+  },
+  "changeUserAvatar": {
+    "message": "Изменить аватар пользователя"
+  },
+  "changeAssistantAvatar": {
+    "message": "Изменить аватар ассистента"
+  },
+  "userAvatarAlt": {
+    "message": "Аватар пользователя"
+  },
+  "assistantAvatarAlt": {
+    "message": "Аватар ассистента"
+  },
+  "cropperDialogLabel": {
+    "message": "Обрезать изображение аватара"
+  },
+  "cropperTitle": {
+    "message": "Настройте свой аватар"
+  },
+  "cropperPreviewAlt": {
+    "message": "Предпросмотр обрезки аватара"
+  },
+  "cropperHint": {
+    "message": "Прокрутите для увеличения. Перетащите для перемещения."
+  },
+  "cropperCancel": {
+    "message": "Отмена"
+  },
+  "cropperSave": {
+    "message": "Сохранить"
+  }
+}

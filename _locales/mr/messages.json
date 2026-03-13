@@ -1,0 +1,38 @@
+{
+  "extensionName": {
+    "message": "ChatGPT अवतार"
+  },
+  "extensionDescription": {
+    "message": "ChatGPT साठी हलके इनलाइन अवतार, स्थानिक प्रतिमा क्रॉपिंगसह."
+  },
+  "changeUserAvatar": {
+    "message": "वापरकर्त्याचा अवतार बदला"
+  },
+  "changeAssistantAvatar": {
+    "message": "सहाय्यकाचा अवतार बदला"
+  },
+  "userAvatarAlt": {
+    "message": "वापरकर्त्याचा अवतार"
+  },
+  "assistantAvatarAlt": {
+    "message": "सहाय्यकाचा अवतार"
+  },
+  "cropperDialogLabel": {
+    "message": "अवतार प्रतिमा क्रॉप करा"
+  },
+  "cropperTitle": {
+    "message": "तुमचा अवतार समायोजित करा"
+  },
+  "cropperPreviewAlt": {
+    "message": "अवतार क्रॉप पूर्वदृश्य"
+  },
+  "cropperHint": {
+    "message": "झूम करण्यासाठी स्क्रोल करा. पुन्हा मांडणीसाठी ड्रॅग करा."
+  },
+  "cropperCancel": {
+    "message": "रद्द करा"
+  },
+  "cropperSave": {
+    "message": "जतन करा"
+  }
+}

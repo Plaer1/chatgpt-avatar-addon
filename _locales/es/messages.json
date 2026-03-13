@@ -1,4 +1,7 @@
 {
+  "extensionName": {
+    "message": "Avatares de ChatGPT"
+  },
   "extensionDescription": {
     "message": "Avatares en línea ligeros para ChatGPT con recorte local de imágenes."
   },

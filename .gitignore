@@ -1,4 +1,4 @@
 # Keep extension icons local-only to avoid accidental sync/overwrite.
-!ico/.gitkeep
+# !ico/.gitkeep
 .gitignore
 Archive.zip

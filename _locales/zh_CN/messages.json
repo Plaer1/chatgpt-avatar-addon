@@ -1,0 +1,38 @@
+{
+  "extensionName": {
+    "message": "ChatGPT 头像"
+  },
+  "extensionDescription": {
+    "message": "适用于 ChatGPT 的轻量级内联头像，支持本地图片裁剪。"
+  },
+  "changeUserAvatar": {
+    "message": "更改用户头像"
+  },
+  "changeAssistantAvatar": {
+    "message": "更改助手头像"
+  },
+  "userAvatarAlt": {
+    "message": "用户头像"
+  },
+  "assistantAvatarAlt": {
+    "message": "助手头像"
+  },
+  "cropperDialogLabel": {
+    "message": "裁剪头像图片"
+  },
+  "cropperTitle": {
+    "message": "调整你的头像"
+  },
+  "cropperPreviewAlt": {
+    "message": "头像裁剪预览"
+  },
+  "cropperHint": {
+    "message": "滚动可缩放，拖动可调整位置。"
+  },
+  "cropperCancel": {
+    "message": "取消"
+  },
+  "cropperSave": {
+    "message": "保存"
+  }
+}

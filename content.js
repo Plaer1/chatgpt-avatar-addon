@@ -236,16 +236,16 @@
         redraw();
       }, { passive: false });
 
-      panel.addEventListener('pointerdown', (event) => {
+      viewport.addEventListener('pointerdown', (event) => {
         dragging = true;
         dragStartX = event.clientX;
         dragStartY = event.clientY;
         dragOriginX = tx;
         dragOriginY = ty;
-        panel.setPointerCapture(event.pointerId);
+        viewport.setPointerCapture(event.pointerId);
       });
 
-      panel.addEventListener('pointermove', (event) => {
+      viewport.addEventListener('pointermove', (event) => {
         if (!dragging) return;
         tx = dragOriginX + (event.clientX - dragStartX);
         ty = dragOriginY + (event.clientY - dragStartY);
@@ -255,13 +255,13 @@
       function endDrag(event) {
         if (!dragging) return;
         dragging = false;
-        if (panel.hasPointerCapture(event.pointerId)) {
-          panel.releasePointerCapture(event.pointerId);
+        if (viewport.hasPointerCapture(event.pointerId)) {
+          viewport.releasePointerCapture(event.pointerId);
         }
       }
 
-      panel.addEventListener('pointerup', endDrag);
-      panel.addEventListener('pointercancel', endDrag);
+      viewport.addEventListener('pointerup', endDrag);
+      viewport.addEventListener('pointercancel', endDrag);
 
       panel.addEventListener('keydown', (event) => {
         if (event.key === 'Escape') {
@@ -282,7 +282,7 @@
       redraw();
     });
   }
-
+  
   function promptForAvatar(role) {
     const input = ensureFileInput();
     input.value = '';

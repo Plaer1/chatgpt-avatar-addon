@@ -1,0 +1,38 @@
+{
+  "extensionName": {
+    "message": "صور ChatGPT الرمزية"
+  },
+  "extensionDescription": {
+    "message": "صور رمزية مضمّنة وخفيفة لـ ChatGPT مع قص الصور محليًا."
+  },
+  "changeUserAvatar": {
+    "message": "تغيير الصورة الرمزية للمستخدم"
+  },
+  "changeAssistantAvatar": {
+    "message": "تغيير الصورة الرمزية للمساعد"
+  },
+  "userAvatarAlt": {
+    "message": "الصورة الرمزية للمستخدم"
+  },
+  "assistantAvatarAlt": {
+    "message": "الصورة الرمزية للمساعد"
+  },
+  "cropperDialogLabel": {
+    "message": "قص صورة رمزية"
+  },
+  "cropperTitle": {
+    "message": "اضبط صورتك الرمزية"
+  },
+  "cropperPreviewAlt": {
+    "message": "معاينة قص الصورة الرمزية"
+  },
+  "cropperHint": {
+    "message": "مرر للتكبير. اسحب لإعادة التموضع."
+  },
+  "cropperCancel": {
+    "message": "إلغاء"
+  },
+  "cropperSave": {
+    "message": "حفظ"
+  }
+}

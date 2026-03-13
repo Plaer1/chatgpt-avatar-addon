@@ -1,4 +1,7 @@
 {
+  "extensionName": {
+    "message": "ChatGPT Avatars"
+  },
   "extensionDescription": {
     "message": "Lightweight inline avatars for ChatGPT with local avatar cropping."
   },

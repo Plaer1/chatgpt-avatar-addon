@@ -1,0 +1,38 @@
+{
+  "extensionName": {
+    "message": "ChatGPT-Avatare"
+  },
+  "extensionDescription": {
+    "message": "Leichte Inline-Avatare für ChatGPT mit lokalem Zuschneiden von Bildern."
+  },
+  "changeUserAvatar": {
+    "message": "Benutzer-Avatar ändern"
+  },
+  "changeAssistantAvatar": {
+    "message": "Assistenten-Avatar ändern"
+  },
+  "userAvatarAlt": {
+    "message": "Benutzer-Avatar"
+  },
+  "assistantAvatarAlt": {
+    "message": "Assistenten-Avatar"
+  },
+  "cropperDialogLabel": {
+    "message": "Avatarbild zuschneiden"
+  },
+  "cropperTitle": {
+    "message": "Deinen Avatar anpassen"
+  },
+  "cropperPreviewAlt": {
+    "message": "Vorschau des Avatar-Zuschnitts"
+  },
+  "cropperHint": {
+    "message": "Zum Zoomen scrollen. Zum Verschieben ziehen."
+  },
+  "cropperCancel": {
+    "message": "Abbrechen"
+  },
+  "cropperSave": {
+    "message": "Speichern"
+  }
+}

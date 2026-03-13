@@ -9,6 +9,17 @@ This repository is structured as a Chrome extension (Manifest V3).
 - `content.css` – avatar and cropper styling.
 - `_locales/en/messages.json` – default English UI strings.
 - `_locales/es/messages.json` – Spanish UI strings.
+- `_locales/ar/messages.json` – Arabic UI strings.
+- `_locales/bn/messages.json` – Bengali UI strings.
+- `_locales/de/messages.json` – German UI strings.
+- `_locales/fr/messages.json` – French UI strings.
+- `_locales/hi/messages.json` – Hindi UI strings.
+- `_locales/id/messages.json` – Indonesian UI strings.
+- `_locales/ja/messages.json` – Japanese UI strings.
+- `_locales/mr/messages.json` – Marathi UI strings.
+- `_locales/pt_BR/messages.json` – Brazilian Portuguese UI strings.
+- `_locales/ru/messages.json` – Russian UI strings.
+- `_locales/zh_CN/messages.json` – Simplified Chinese UI strings.
 
 ## Supported site
 

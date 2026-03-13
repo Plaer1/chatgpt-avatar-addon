@@ -1,0 +1,38 @@
+{
+  "extensionName": {
+    "message": "Avatar ChatGPT"
+  },
+  "extensionDescription": {
+    "message": "Avatar inline ringan untuk ChatGPT dengan pemangkasan gambar lokal."
+  },
+  "changeUserAvatar": {
+    "message": "Ubah avatar pengguna"
+  },
+  "changeAssistantAvatar": {
+    "message": "Ubah avatar asisten"
+  },
+  "userAvatarAlt": {
+    "message": "Avatar pengguna"
+  },
+  "assistantAvatarAlt": {
+    "message": "Avatar asisten"
+  },
+  "cropperDialogLabel": {
+    "message": "Pangkas gambar avatar"
+  },
+  "cropperTitle": {
+    "message": "Sesuaikan avatar Anda"
+  },
+  "cropperPreviewAlt": {
+    "message": "Pratinjau pangkasan avatar"
+  },
+  "cropperHint": {
+    "message": "Gulir untuk memperbesar. Seret untuk memindahkan."
+  },
+  "cropperCancel": {
+    "message": "Batal"
+  },
+  "cropperSave": {
+    "message": "Simpan"
+  }
+}
